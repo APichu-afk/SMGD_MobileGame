@@ -71,6 +71,6 @@ public class Attack : MonoBehaviour
 
     public void healthdamage()
     {
-        health -= 6.0f;
+        health -= 5.0f;
     }
 }
