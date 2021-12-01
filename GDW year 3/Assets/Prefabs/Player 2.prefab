@@ -513,7 +513,6 @@ GameObject:
   - component: {fileID: 5710456759724643473}
   - component: {fileID: 5710456759724643472}
   - component: {fileID: 5710456759724643476}
-  - component: {fileID: 5710456759724643475}
   - component: {fileID: 5710456759724643486}
   - component: {fileID: 5710456759724643485}
   - component: {fileID: 915603030927797232}
@@ -598,7 +597,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5710456759724643475}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: Onmove
         m_Mode: 0
@@ -617,21 +616,6 @@ MonoBehaviour:
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 5710456758175057835}
---- !u!114 &5710456759724643475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5710456759724643484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d176c5207182214295a0ff7ec1f3903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 5710456759724643485}
-  speed: 5
-  gravity: 15
 --- !u!54 &5710456759724643486
 Rigidbody:
   m_ObjectHideFlags: 0

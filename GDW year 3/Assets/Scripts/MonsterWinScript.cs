@@ -15,7 +15,6 @@ public class MonsterWinScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(health);
         if (health <= 0)
         {
             Debug.Log("Monsters win");
@@ -24,7 +23,7 @@ public class MonsterWinScript : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision)
-    {Debug.Log("yes");
+    {
         if (collision.gameObject.tag == "Player 2")
         {
             if (health <= 0)

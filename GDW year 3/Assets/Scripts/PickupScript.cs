@@ -11,6 +11,7 @@ public class PickupScript : MonoBehaviour
     bool beingCarried = false;
     public int dmg;
     private bool touched = false;
+    private bool letgo = false;
 
     void Start()
     {
@@ -27,15 +28,6 @@ public class PickupScript : MonoBehaviour
         {
             hasPlayer = false;
         }
-        if (hasPlayer && Input.GetButtonDown("Use"))
-        {
-            if (playerCam.Find("SpacePart") == null)
-            {
-                GetComponent<Rigidbody>().isKinematic = true;
-                transform.parent = playerCam;
-                beingCarried = true;
-            }
-        }
         if (beingCarried)
         {
             if (touched)
@@ -45,7 +37,7 @@ public class PickupScript : MonoBehaviour
                 beingCarried = false;
                 touched = false;
             }
-            if (Input.GetKeyUp(KeyCode.F))
+            if (letgo == true)
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
@@ -53,6 +45,22 @@ public class PickupScript : MonoBehaviour
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce); 
             }
         }
+    }
+
+    public void Pickup()
+    {
+        if (playerCam.Find("SpacePart") == null)
+        {
+                GetComponent<Rigidbody>().isKinematic = true;
+                transform.parent = playerCam;
+                beingCarried = true;
+        }
+        letgo = false;
+    }
+
+    public void drop()
+    {
+        letgo = true;
     }
 
     void OnTriggerEnter()
